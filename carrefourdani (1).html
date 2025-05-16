@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrefour</title>
+
+  <!-- Importación de la biblioteca oficial de Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+  <!-- Tu código JavaScript principal -->
+  <script defer src="carrefour2.js"></script>
+</head>
+<body>
+    <form id="formularioCarrefour">
+        <input type="text" name="titulo" placeholder="Título" required>
+        <input type="text" name="descripcion" placeholder="Descripción del producto">
+        <p>Hora y fecha límite de entrega.</p>
+        <input type="date" name="fecha">
+        <input type="time" name="hora">
+        <input type="number" name="prioridad" placeholder="Prioridad">
+      
+        <label>
+          <input type="checkbox" name="completada">
+        </label>
+
+
+        <!-- Nuevo campo para la categoría -->
+        <label for="categoria">Entregado</label>
+        <select name="categoria" id="categoria">
+          <option value="">-- Seleccione una categoría --</option>
+          <!-- Las opciones se cargarán dinámicamente con JavaScript -->
+        </select>
+      
+        
+        <button type="submit" id="botonGuardar">Guardar tarea</button>
+        <button type="button" id="botonCancelar" style="display: none;">Cancelar edición</button>
+    </form>
+
+  <h1>LISTADO DE PRODUCTOS</h1>
+  <div id="listadoCarrefour"></div>
+
+  
+</body>
+</html>
