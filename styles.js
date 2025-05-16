@@ -207,4 +207,14 @@ async function cargarCarrefour(supabase) {
       selectCategoria.appendChild(option);
     });
   }
+ document.body.style.fontFamily = "Arial, sans-serif";
+document.body.style.backgroundColor = "#F0F8FF"
+document.querySelectorAll("h1").forEach(h1 => {
+  h1.style.color = "green";
+  h1.style.textDecoration = "underline";
+});
+document.querySelectorAll("p").forEach(p => {
+  p.style.fontFamily = "'Comic Sans MS', cursive, sans-serif";
+});
+
   
