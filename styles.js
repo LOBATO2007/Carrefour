@@ -217,4 +217,99 @@ document.querySelectorAll("p").forEach(p => {
   p.style.fontFamily = "'Comic Sans MS', cursive, sans-serif";
 });
 
+ document.addEventListener("DOMContentLoaded", () => {
+  // Paleta de colores corporativa
+  const primaryColor = "#0050A0";      // Azul oscuro
+  const secondaryColor = "#F0F2F5";    // Fondo suave
+  const accentColor = "#0094FF";       // Azul claro
+  const textColor = "#333";
+
+  // Estilos al body
+  document.body.style.margin = "0";
+  document.body.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+  document.body.style.backgroundColor = secondaryColor;
+  document.body.style.color = textColor;
+
+  // Formulario
+  const form = document.getElementById("formularioCarrefour");
+  form.style.maxWidth = "500px";
+  form.style.margin = "40px auto";
+  form.style.padding = "30px";
+  form.style.backgroundColor = "#fff";
+  form.style.border = "1px solid #dcdcdc";
+  form.style.borderRadius = "8px";
+  form.style.boxShadow = "0 4px 12px rgba(0,0,0,0.05)";
+  form.style.display = "flex";
+  form.style.flexDirection = "column";
+  form.style.gap = "15px";
+
+  // Inputs y selects
+  form.querySelectorAll("input, select").forEach(el => {
+    el.style.padding = "12px";
+    el.style.border = "1px solid #ccc";
+    el.style.borderRadius = "4px";
+    el.style.fontSize = "14px";
+    el.style.outline = "none";
+    el.addEventListener("focus", () => {
+      el.style.borderColor = accentColor;
+      el.style.boxShadow = "0 0 4px rgba(0,148,255,0.4)";
+    });
+    el.addEventListener("blur", () => {
+      el.style.borderColor = "#ccc";
+      el.style.boxShadow = "none";
+    });
+  });
+
+  // Botones
+  const estiloBoton = (btn, color = primaryColor) => {
+    btn.style.padding = "12px";
+    btn.style.border = "none";
+    btn.style.borderRadius = "4px";
+    btn.style.backgroundColor = color;
+    btn.style.color = "#fff";
+    btn.style.fontWeight = "600";
+    btn.style.fontSize = "14px";
+    btn.style.cursor = "pointer";
+    btn.style.transition = "background-color 0.3s ease";
+
+    btn.addEventListener("mouseover", () => {
+      btn.style.backgroundColor = "#003f85";
+    });
+    btn.addEventListener("mouseout", () => {
+      btn.style.backgroundColor = color;
+    });
+  };
+
+  estiloBoton(document.getElementById("botonGuardar"));
+  estiloBoton(document.getElementById("botonCancelar"), "#6c757d");
+
+  // Título principal
+  const h1 = document.querySelector("h1");
+  h1.style.textAlign = "center";
+  h1.style.marginTop = "20px";
+  h1.style.fontSize = "28px";
+  h1.style.color = primaryColor;
+
+  // Contenedor del listado
+  const listado = document.getElementById("listadoCarrefour");
+  listado.style.maxWidth = "700px";
+  listado.style.margin = "20px auto";
+  listado.style.backgroundColor = "#fff";
+  listado.style.border = "1px solid #e0e0e0";
+  listado.style.borderRadius = "6px";
+  listado.style.padding = "20px";
+  listado.style.boxShadow = "0 2px 6px rgba(0,0,0,0.05)";
+
+  // Rellenar opciones de categoría (simulado)
+  const categorias = ["Electrónica", "Alimentos", "Hogar", "Moda", "Juguetes"];
+  const selectCategoria = document.getElementById("categoria");
+  categorias.forEach(cat => {
+    const option = document.createElement("option");
+    option.value = cat.toLowerCase();
+    option.textContent = cat;
+    selectCategoria.appendChild(option);
+  });
+});
+
+
   
